@@ -1,0 +1,235 @@
+[
+  {
+    "count_cards": 51,
+    "count_sellers": 5,
+    "rate_sellers_id": [
+      {
+        "idShop": 14241,
+        "rate": "4.6"
+      },
+      {
+        "idShop": 100712,
+        "rate": "4.7"
+      },
+      {
+        "idShop": 47912,
+        "rate": "4.7"
+      },
+      {
+        "idShop": 55716,
+        "rate": "4.8"
+      },
+      {
+        "idShop": 10276,
+        "rate": "4.4"
+      }
+    ],
+    "count_rev": 178,
+    "price": [
+      {
+        "idShop": 100712,
+        "price": 230.0
+      },
+      {
+        "idShop": 55716,
+        "price": 150.0
+      },
+      {
+        "idShop": 100712,
+        "price": 336.0
+      },
+      {
+        "idShop": 55716,
+        "price": 578.0
+      },
+      {
+        "idShop": 55716,
+        "price": 284.0
+      },
+      {
+        "idShop": 55716,
+        "price": 738.0
+      },
+      {
+        "idShop": 100712,
+        "price": 1012.0
+      },
+      {
+        "idShop": 47912,
+        "price": 328.0
+      },
+      {
+        "idShop": 100712,
+        "price": 356.0
+      },
+      {
+        "idShop": 14241,
+        "price": 479.0
+      },
+      {
+        "idShop": 100712,
+        "price": 224.0
+      },
+      {
+        "idShop": 55716,
+        "price": 276.0
+      },
+      {
+        "idShop": 55716,
+        "price": 205.0
+      },
+      {
+        "idShop": 100712,
+        "price": 306.0
+      },
+      {
+        "idShop": 55716,
+        "price": 574.0
+      },
+      {
+        "idShop": 55716,
+        "price": 383.0
+      },
+      {
+        "idShop": 55716,
+        "price": 205.0
+      },
+      {
+        "idShop": 55716,
+        "price": 133.0
+      },
+      {
+        "idShop": 55716,
+        "price": 133.0
+      },
+      {
+        "idShop": 55716,
+        "price": 261.0
+      },
+      {
+        "idShop": 55716,
+        "price": 261.0
+      },
+      {
+        "idShop": 55716,
+        "price": 420.0
+      },
+      {
+        "idShop": 55716,
+        "price": 280.0
+      },
+      {
+        "idShop": 100712,
+        "price": 986.0
+      },
+      {
+        "idShop": 55716,
+        "price": 383.0
+      },
+      {
+        "idShop": 55716,
+        "price": 205.0
+      },
+      {
+        "idShop": 100712,
+        "price": 180.0
+      },
+      {
+        "idShop": 100712,
+        "price": 324.0
+      },
+      {
+        "idShop": 55716,
+        "price": 133.0
+      },
+      {
+        "idShop": 55716,
+        "price": 133.0
+      },
+      {
+        "idShop": 55716,
+        "price": 261.0
+      },
+      {
+        "idShop": 55716,
+        "price": 304.0
+      },
+      {
+        "idShop": 55716,
+        "price": 614.0
+      },
+      {
+        "idShop": 55716,
+        "price": 614.0
+      },
+      {
+        "idShop": 55716,
+        "price": 383.0
+      },
+      {
+        "idShop": 55716,
+        "price": 574.0
+      },
+      {
+        "idShop": 100712,
+        "price": 307.0
+      },
+      {
+        "idShop": 100712,
+        "price": 202.0
+      },
+      {
+        "idShop": 55716,
+        "price": 261.0
+      },
+      {
+        "idShop": 100712,
+        "price": 327.0
+      },
+      {
+        "idShop": 100712,
+        "price": 180.0
+      },
+      {
+        "idShop": 100712,
+        "price": 616.0
+      },
+      {
+        "idShop": 100712,
+        "price": 770.0
+      },
+      {
+        "idShop": 100712,
+        "price": 286.0
+      },
+      {
+        "idShop": 100712,
+        "price": 438.0
+      },
+      {
+        "idShop": 100712,
+        "price": 346.0
+      },
+      {
+        "idShop": 100712,
+        "price": 357.0
+      },
+      {
+        "idShop": 100712,
+        "price": 360.0
+      },
+      {
+        "idShop": 100712,
+        "price": 378.0
+      },
+      {
+        "idShop": 10276,
+        "price": 387.0
+      },
+      {
+        "idShop": 10276,
+        "price": 279.0
+      }
+    ]
+  }
+]

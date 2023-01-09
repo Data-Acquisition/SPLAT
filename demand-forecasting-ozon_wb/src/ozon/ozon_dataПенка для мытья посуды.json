@@ -1,0 +1,347 @@
+[
+  {
+    "countCards": 177,
+    "countShops": 66,
+    "price": [
+      {
+        "title": "Средство для мытья посуды, овощей и фруктов GRASS с соком груши и экстрактом базилика ECO CRISPI пенка 550мл",
+        "price": "271",
+        "discount_price": "638",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 567359738,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-grass-s-sokom-grushi-i-ekstraktom-bazilika-eco-crispi-567359738/"
+      },
+      {
+        "title": "Средство для мытья посуды, овощей и фруктов GRASS с соком груши и экстрактом базилика ECO CRISPI 550мл пенка",
+        "price": "319",
+        "discount_price": "638",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 207862028,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-grass-s-sokom-grushi-i-ekstraktom-bazilika-eco-crispi-207862028/"
+      },
+      {
+        "title": "Средство для мытья посуды, для мытья овощей и фруктов с ценными маслами белого хлопка GRASS ECO CRISPI 550мл, пенка",
+        "price": "319",
+        "discount_price": "638",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 207862027,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-dlya-mytya-ovoshchey-i-fruktov-s-tsennymi-maslami-belogo-hlopka-grass-207862027/"
+      },
+      {
+        "title": "Средство для мытья посуды Fairy \"Активная пена\" с дозатором 375 мл (1 шт)",
+        "price": "542",
+        "discount_price": "850",
+        "brand": "Fairy",
+        "category": "Средства для мытья посуды",
+        "sku": 795547267,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-fairy-aktivnaya-pena-s-dozatorom-375-ml-1-sht-795547267/"
+      },
+      {
+        "title": "GRASS/ Моющее средство пенка Crispi для мытья посуды, овощей и фруктов, пенка с ценными маслами белого хлопка 550 мл",
+        "price": "240",
+        "discount_price": "345",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 242990625,
+        "url": "https://www.ozon.ru/product/grass-moyushchee-sredstvo-penka-crispi-dlya-mytya-posudy-ovoshchey-i-fruktov-penka-s-242990625/"
+      },
+      {
+        "title": "Средство для мытья посуды GRASS CRISPI ПЕНКА с ценными маслами белого хлопка ",
+        "price": "265",
+        "discount_price": "364",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 261079285,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-grass-crispi-penka-s-tsennymi-maslami-belogo-hlopka-261079285/"
+      },
+      {
+        "title": "Grass Средство для мытья посуды CRISPI, пенка, с ценными маслами белого хлопка, 550 мл, 2 штуки/",
+        "price": "852",
+        "discount_price": "1549",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 655435611,
+        "url": "https://www.ozon.ru/product/grass-sredstvo-dlya-mytya-posudy-crispi-penka-s-tsennymi-maslami-belogo-hlopka-550-ml-2-shtuki-655435611/"
+      },
+      {
+        "title": "Средство для мытья посуды овощей и фруктов, 2л Dutybox Сменные блоки",
+        "price": "528",
+        "discount_price": "1056",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 192506576,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-2l-dutybox-smennye-bloki-192506576/"
+      },
+      {
+        "title": "GRASS/ Моющее средство пенка Crispi для мытья посуды, овощей и фруктов, с соком груши и экстрактом базилика, средство для мытья посуды, 550 мл",
+        "price": "240",
+        "discount_price": "453",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 242974668,
+        "url": "https://www.ozon.ru/product/grass-moyushchee-sredstvo-penka-crispi-dlya-mytya-posudy-ovoshchey-i-fruktov-s-sokom-grushi-i-242974668/"
+      },
+      {
+        "title": "Средство для мытья посуды 5 литров + Дозатор в подарок Dutybox",
+        "price": "1090",
+        "discount_price": "2320",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 654900876,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-5-litrov-dozator-v-podarok-dutybox-654900876/"
+      },
+      {
+        "title": "Средство для мытья посуды GRASS ECO CRISPI 1100мл (550мл х 2шт.), пенка для мытья овощей и фруктов с соком груши и с ценными маслами белого хлопка",
+        "price": "459",
+        "discount_price": "918",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 289657309,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-grass-eco-crispi-1100ml-550ml-h-2sht-penka-dlya-mytya-ovoshchey-i-289657309/"
+      },
+      {
+        "title": "Средство для мытья посуды овощей и фруктов, 1 л Dutybox",
+        "price": "462",
+        "discount_price": "924",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 537674218,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-1-l-dutybox-537674218/"
+      },
+      {
+        "title": "Средство для мытья посуды овощей и фруктов, 4,5 л Dutybox",
+        "price": "990",
+        "discount_price": "1980",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 484416670,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-4-5-l-dutybox-484416670/"
+      },
+      {
+        "title": "Средства для мытья посуды овощей и фруктов, 1л Dutybox",
+        "price": "462",
+        "discount_price": "924",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 166975081,
+        "url": "https://www.ozon.ru/product/sredstva-dlya-mytya-posudy-ovoshchey-i-fruktov-1l-dutybox-166975081/"
+      },
+      {
+        "title": "Средство для мытья посуды GRASS CRISPI ПЕНКА с ценными маслами белого хлопка ",
+        "price": "260",
+        "discount_price": "423",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 502672095,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-grass-crispi-penka-s-tsennymi-maslami-belogo-hlopka-502672095/"
+      },
+      {
+        "title": "Средство для мытья посуды овощей и фруктов, 3 л Dutybox",
+        "price": "724",
+        "discount_price": "1540",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 539903798,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-3-l-dutybox-539903798/"
+      },
+      {
+        "title": "Средство для мытья фруктов и овощей Wonder Lab эко средство для мытья пена для кухни мыло без запаха Вандер Лаб 450 мл",
+        "price": "350",
+        "discount_price": "394",
+        "brand": "WONDER LAB",
+        "category": "Средства для мытья посуды",
+        "sku": 488599731,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-fruktov-i-ovoshchey-wonder-lab-eko-sredstvo-dlya-mytya-pena-dlya-kuhni-mylo-488599731/"
+      },
+      {
+        "title": "Средство Fairy Активная пена для мытья посуды с дозатором 375 мл (2 шт) (Финляндия)",
+        "price": "1006",
+        "discount_price": "2500",
+        "brand": "Fairy",
+        "category": "Средства для мытья посуды",
+        "sku": 720768585,
+        "url": "https://www.ozon.ru/product/sredstvo-fairy-aktivnaya-pena-dlya-mytya-posudy-s-dozatorom-375-ml-2-sht-finlyandiya-720768585/"
+      },
+      {
+        "title": "Средство для мытья детской посуды WONDER LAB, эко пена для мытья посуды, без запаха, нейтральная, 450 мл",
+        "price": "245",
+        "discount_price": "395",
+        "brand": "WONDER LAB",
+        "category": "Средства для мытья посуды",
+        "sku": 569129141,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-detskoy-posudy-wonder-lab-eko-pena-dlya-mytya-posudy-bez-zapaha-neytralnaya-569129141/"
+      },
+      {
+        "title": "Soonsaem Bubble Olive Пенка для мытья посуды Оливки 1000 мл в мягкой упаковке",
+        "price": "939",
+        "discount_price": "1088",
+        "brand": "Aekyung",
+        "category": "Средства для мытья посуды",
+        "sku": 731433508,
+        "url": "https://www.ozon.ru/product/soonsaem-bubble-olive-penka-dlya-mytya-posudy-olivki-1000-ml-v-myagkoy-upakovke-731433508/"
+      },
+      {
+        "title": "Средство для мытья посуды овощей и фруктов, 2л Dutybox Сменные блоки",
+        "price": "590",
+        "discount_price": "1180",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 538725998,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-2l-dutybox-smennye-bloki-538725998/"
+      },
+      {
+        "title": "Средство для мытья посуды ECO CRISPI by Grass 750мл, моющее средство для детской посуды, игрушек, бутылочек и сосок",
+        "price": "369",
+        "discount_price": "738",
+        "brand": "eco CRISPI BY GRASS",
+        "category": "Средства для мытья посуды",
+        "sku": 634321278,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-eco-crispi-by-grass-750ml-moyushchee-sredstvo-dlya-detskoy-posudy-634321278/"
+      },
+      {
+        "title": "Средство для мытья овощей, фруктов и ягод WONDER LAB (Пена), 450 мл",
+        "price": "319",
+        "discount_price": "395",
+        "brand": "WONDER LAB",
+        "category": "Средства для мытья посуды",
+        "sku": 600901819,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-ovoshchey-fruktov-i-yagod-wonder-lab-pena-450-ml-600901819/"
+      },
+      {
+        "title": "Набор для уборки дома GRASS: азелит анти жир, средство для кухни Azelit 600мл + средство для сантехники Gloss 600мл + жидкое мыло для рук 1л + средство дял мытья посуды Crispi 550мл  + средство для стекол и зеркал Clean Glass 600мл",
+        "price": "1100",
+        "discount_price": "2200",
+        "brand": "Grass",
+        "category": "Универсальные чистящие средства",
+        "sku": 645419266,
+        "url": "https://www.ozon.ru/product/nabor-dlya-uborki-doma-grass-azelit-anti-zhir-sredstvo-dlya-kuhni-azelit-600ml-sredstvo-dlya-645419266/"
+      },
+      {
+        "title": "Средство для мытья посуды активная пена Fairy Active Foam 375 мл, Финляндия",
+        "price": "630",
+        "discount_price": "900",
+        "brand": "Fairy",
+        "category": "Средства для мытья посуды",
+        "sku": 738090391,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-aktivnaya-pena-fairy-active-foam-375-ml-finlyandiya-738090391/"
+      },
+      {
+        "title": "Средство для мытья посуды овощей и фруктов, 5 л Dutybox",
+        "price": "1128",
+        "discount_price": "2400",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 537684173,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-ovoshchey-i-fruktov-5-l-dutybox-537684173/"
+      },
+      {
+        "title": "Средство для мытья посуды Grass Crispi, с маслами белого хлопка, 550 мл + Средство для мытья посуды Grass Crispi, с соком груши и экстрактом базилика, 550 мл",
+        "price": "540",
+        "discount_price": 0,
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 821230172,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-grass-crispi-s-maslami-belogo-hlopka-550-ml-sredstvo-dlya-mytya-posudy-821230172/"
+      },
+      {
+        "title": "Средство для мытья посуды \"CRISPI\" ПЕНКА с соком груши и экстрактом базилика (флакон 550 мл)",
+        "price": "315",
+        "discount_price": "428",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 561334280,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-crispi-penka-s-sokom-grushi-i-ekstraktom-bazilika-flakon-550-ml-561334280/"
+      },
+      {
+        "title": "Средство для мытья посуды \"CRISPI\" ПЕНКА с соком груши и экстрактом базилика (флакон 550 мл), 125455 GRASS",
+        "price": "332",
+        "discount_price": "551",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 213179756,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-crispi-penka-s-sokom-grushi-i-ekstraktom-bazilika-flakon-550-ml-213179756/"
+      },
+      {
+        "title": "Набор Средство для мытья посуды  Velly Sensitive алоэ вера 5,2 кг + Крем-мыло жидкое увлажняющее Milana алоэ вера 5 кг",
+        "price": "1495",
+        "discount_price": "3180",
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 678043750,
+        "url": "https://www.ozon.ru/product/nabor-sredstvo-dlya-mytya-posudy-velly-sensitive-aloe-vera-5-2-kg-krem-mylo-zhidkoe-678043750/"
+      },
+      {
+        "title": "Средство для мытья посуды DutyBox Dishes, концентрат, 50 мл. х 6 шт.",
+        "price": "846",
+        "discount_price": "962",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 389428694,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-dutybox-dishes-kontsentrat-50-ml-h-6-sht-389428694/"
+      },
+      {
+        "title": "Набор средств для мытья посуды Grass Пенка Crispi с ценными маслами белого хлопка + Пенка Crispi с соком груши и экстрактом базилика",
+        "price": "575",
+        "discount_price": 0,
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 294441130,
+        "url": "https://www.ozon.ru/product/nabor-sredstv-dlya-mytya-posudy-grass-penka-crispi-s-tsennymi-maslami-belogo-hlopka-penka-crispi-294441130/"
+      },
+      {
+        "title": "Средство для мытья посуды DutyBox Dishes, концентрат, 50 мл. х 4 шт.",
+        "price": "606",
+        "discount_price": "701",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 389385116,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-posudy-dutybox-dishes-kontsentrat-50-ml-h-4-sht-389385116/"
+      },
+      {
+        "title": "Пенка для посуды, овощей и фруктов GraSS CRISPI с соком груши и экстрактом базилика 550 мл",
+        "price": "400",
+        "discount_price": 0,
+        "brand": "Grass",
+        "category": "Средства для мытья посуды",
+        "sku": 722324497,
+        "url": "https://www.ozon.ru/product/penka-dlya-posudy-ovoshchey-i-fruktov-grass-crispi-s-sokom-grushi-i-ekstraktom-bazilika-550-ml-722324497/"
+      },
+      {
+        "title": "Средство Fairy Активная пена для мытья посуды с дозатором 375 мл (Финляндия)",
+        "price": "539",
+        "discount_price": "925",
+        "brand": "Fairy",
+        "category": "Средства для мытья посуды",
+        "sku": 800318406,
+        "url": "https://www.ozon.ru/product/sredstvo-fairy-aktivnaya-pena-dlya-mytya-posudy-s-dozatorom-375-ml-finlyandiya-800318406/"
+      },
+      {
+        "title": "Средство для мытья детской посуды / Эко-пенка для детской посуды Dutybox 2х50мл + бутылка 500мл",
+        "price": "508",
+        "discount_price": "648",
+        "brand": "Dutybox",
+        "category": "Средства для мытья посуды",
+        "sku": 467839635,
+        "url": "https://www.ozon.ru/product/sredstvo-dlya-mytya-detskoy-posudy-eko-penka-dlya-detskoy-posudy-dutybox-2h50ml-butylka-500ml-467839635/"
+      }
+    ],
+    "rate": [
+      "Ремисгрупп: 4,8 из 5",
+      "ИП Слюсарев В.П.- дилер GRASS: 4,8 из 5",
+      "ShopitAll: 5,0 из 5",
+      "WONDER LAB - завод производитель: 4,8 из 5",
+      "GRASS - завод производитель: 4,9 из 5",
+      "GRASS Official: 4,8 из 5",
+      "ГК. Авторосс: 4,8 из 5",
+      "СтройТехНавигатор: 4,8 из 5",
+      "E-COM TRADE: 4,8 из 5",
+      "DutyBox: 4,9 из 5",
+      "Территория чистоты: 4,9 из 5",
+      "Чистограф: 4,8 из 5"
+    ],
+    "countRev": 295
+  }
+]
