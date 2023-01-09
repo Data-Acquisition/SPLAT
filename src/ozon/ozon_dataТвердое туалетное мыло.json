@@ -1,0 +1,342 @@
+[
+  {
+    "countCards": 119,
+    "countShops": 29,
+    "price": [
+      {
+        "title": "Натуральное туалетное мыло SYNERGETIC \"Масло мяты и апельсин\" гипоаллергенное,90 г. твердое, кусковое",
+        "price": "119",
+        "discount_price": "299",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 722375005,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-maslo-myaty-i-apelsin-gipoallergennoe-90-g-tverdoe-kuskovoe-722375005/"
+      },
+      {
+        "title": "Натуральное туалетное мыло SYNERGETIC \"Ассорти\" 4*90гр. твердое, кусковое",
+        "price": "349",
+        "discount_price": "770",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 600664176,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-assorti-4-90gr-tverdoe-kuskovoe-600664176/"
+      },
+      {
+        "title": "Натуральное туалетное мыло Synergetic\" Масло мяты и апельсин\" 4*90гр. твердое, кусковое",
+        "price": "349",
+        "discount_price": "770",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 600840799,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-maslo-myaty-i-apelsin-4-90gr-tverdoe-kuskovoe-600840799/"
+      },
+      {
+        "title": "Натуральное туалетное мыло SYNERGETIC морская соль и водоросли, 90 г. твердое, кусковое",
+        "price": "119",
+        "discount_price": "299",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 722375009,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-morskaya-sol-i-vodorosli-90-g-tverdoe-kuskovoe-722375009/"
+      },
+      {
+        "title": "Натуральное туалетное мыло Synergetic Эвкалипт и шалфей 4*90гр. твердое, кусковое",
+        "price": "349",
+        "discount_price": "770",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 600889590,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-evkalipt-i-shalfey-4-90gr-tverdoe-kuskovoe-600889590/"
+      },
+      {
+        "title": "Натуральное туалетное мыло Synergetic \"Розмарин и имбирь\" 4*90гр.  кусковое, твердое",
+        "price": "349",
+        "discount_price": "770",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 600803421,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-rozmarin-i-imbir-4-90gr-kuskovoe-tverdoe-600803421/"
+      },
+      {
+        "title": "Натуральное туалетное мыло SYNERGETIC розмарин и имбирь, 90 г. твердое, кусковое",
+        "price": "119",
+        "discount_price": "299",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 722374745,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-rozmarin-i-imbir-90-g-tverdoe-kuskovoe-722374745/"
+      },
+      {
+        "title": "Натуральное туалетное мыло SYNERGETIC эвкалипт и шалфей, 90 г. твердое , кусковое",
+        "price": "119",
+        "discount_price": "299",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 722376735,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-evkalipt-i-shalfey-90-g-tverdoe-kuskovoe-722376735/"
+      },
+      {
+        "title": "Натуральное туалетное мыло Synergetic \"Морская соль и водоросли \" 4*90гр. твердое, кусковое",
+        "price": "349",
+        "discount_price": "770",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 600802291,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-morskaya-sol-i-vodorosli-4-90gr-tverdoe-kuskovoe-600802291/"
+      },
+      {
+        "title": "Натуральное туалетное мыло SYNERGETIC \"Масло мяты и апельсин\", гипоаллергенное, кусковое, 90 г",
+        "price": "136",
+        "discount_price": "179",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 577055388,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-maslo-myaty-i-apelsin-gipoallergennoe-kuskovoe-90-g-577055388/"
+      },
+      {
+        "title": "Натуральное туалетное мыло SYNERGETIC \"Морская соль и водоросли\", гипоаллергенное, кусковое ,90 г",
+        "price": "136",
+        "discount_price": "179",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 577055391,
+        "url": "https://www.ozon.ru/product/naturalnoe-tualetnoe-mylo-synergetic-morskaya-sol-i-vodorosli-gipoallergennoe-kuskovoe-90-g-577055391/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Бутерброд с красной икрой\" в подарок на Новый год 2023 .",
+        "price": "229",
+        "discount_price": "366",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 180024584,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-buterbrod-s-krasnoy-ikroy-v-podarok-na-novyy-god-2023-180024584/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Снежинка №1 зеленая\" в подарок на Новый год",
+        "price": "217",
+        "discount_price": "380",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Сувенирное мыло",
+        "sku": 332378162,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-snezhinka-1-zelenaya-v-podarok-na-novyy-god-332378162/"
+      },
+      {
+        "title": "Мыло туалетное Synergetic Эвкалипт и шалфей, 90 г",
+        "price": "175",
+        "discount_price": "230",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 785760541,
+        "url": "https://www.ozon.ru/product/mylo-tualetnoe-synergetic-evkalipt-i-shalfey-90-g-785760541/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Бутерброд с красной икрой\" в подарок на Новый год 2023, 2шт",
+        "price": "448",
+        "discount_price": "810",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 533475288,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-buterbrod-s-krasnoy-ikroy-v-podarok-na-novyy-god-2023-2sht-533475288/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Восьмерка с ландышем\" в подарок, сувенир на праздник, розовый",
+        "price": "156",
+        "discount_price": "439",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Сувенирное мыло",
+        "sku": 466282842,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-vosmerka-s-landyshem-v-podarok-suvenir-na-prazdnik-rozovyy-466282842/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Набор Шишка голубая\", новогодний подарок, мыло косметическое в подарок на Новый год 2023",
+        "price": "204",
+        "discount_price": "337",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 327235841,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-nabor-shishka-golubaya-novogodniy-podarok-mylo-kosmeticheskoe-327235841/"
+      },
+      {
+        "title": "Synergetic Мыло туалетное эвкалипт и шалфей 90 г",
+        "price": "199",
+        "discount_price": "299",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 640015499,
+        "url": "https://www.ozon.ru/product/synergetic-mylo-tualetnoe-evkalipt-i-shalfey-90-g-640015499/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Шишка зеленая\", новогодний подарок, мыло косметическое в подарок на Новый год",
+        "price": "204",
+        "discount_price": "354",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 327250698,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-shishka-zelenaya-novogodniy-podarok-mylo-kosmeticheskoe-v-podarok-na-327250698/"
+      },
+      {
+        "title": "Мыло туалетное Synergetic Морская соль и водоросли, 90 г",
+        "price": "175",
+        "discount_price": "230",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 785778173,
+        "url": "https://www.ozon.ru/product/mylo-tualetnoe-synergetic-morskaya-sol-i-vodorosli-90-g-785778173/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Снежинка № 1 голубая\" в подарок на Новый год, 2шт.",
+        "price": "424",
+        "discount_price": 0,
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 756534452,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-snezhinka-1-golubaya-v-podarok-na-novyy-god-2sht-756534452/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Снежинка № 2\",  мыло косметическое  в подарок на Новый год, зеленый, 2шт.",
+        "price": "392",
+        "discount_price": 0,
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Сувенирное мыло",
+        "sku": 756534469,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-snezhinka-2-mylo-kosmeticheskoe-v-podarok-na-novyy-god-756534469/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Снежинка мини\" мыло косметическое в подарок на Новый год, 5 шт",
+        "price": "676",
+        "discount_price": "1265",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Сувенирное мыло",
+        "sku": 540281293,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-snezhinka-mini-mylo-kosmeticheskoe-v-podarok-na-novyy-god-5-sht-540281293/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Восьмерка ирис\", мыло косметическое в подарок, сувенир на праздник",
+        "price": "277",
+        "discount_price": "718",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 466324845,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-vosmerka-iris-mylo-kosmeticheskoe-v-podarok-suvenir-na-prazdnik-466324845/"
+      },
+      {
+        "title": "Synergetic Мыло туалетное масло мяты и апельсин 90 г",
+        "price": "199",
+        "discount_price": "299",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 640022576,
+        "url": "https://www.ozon.ru/product/synergetic-mylo-tualetnoe-maslo-myaty-i-apelsin-90-g-640022576/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Снежинка № 2\",  мыло косметическое  в подарок на Новый год, сиреневый, 2 шт.",
+        "price": "392",
+        "discount_price": 0,
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 756534464,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-snezhinka-2-mylo-kosmeticheskoe-v-podarok-na-novyy-god-sirenevyy-756534464/"
+      },
+      {
+        "title": "Рецепты бабушки Агафьи / Мыло \"Ромашка и мята\" 100 гр., 2 шт",
+        "price": "395",
+        "discount_price": "416",
+        "brand": "Рецепты бабушки Агафьи",
+        "category": "Мыло",
+        "sku": 748493987,
+        "url": "https://www.ozon.ru/product/retsepty-babushki-agafi-mylo-romashka-i-myata-100-gr-2-sht-748493987/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Снежинка №1 оранжевая\" в подарок на Новый год, 2 шт.",
+        "price": "424",
+        "discount_price": 0,
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 756535299,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-snezhinka-1-oranzhevaya-v-podarok-na-novyy-god-2-sht-756535299/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Восьмерка с ландышем\" в подарок, сувенир на праздник,  разноцветный, 5 шт",
+        "price": "719",
+        "discount_price": "1552",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 467308719,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-vosmerka-s-landyshem-v-podarok-suvenir-na-prazdnik-raznotsvetnyy-5-sht-467308719/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Снежинка № 2 ассорти\", новогодний подарок, мыло косметическое  в подарок на Новый год, ассорти 5 шт.",
+        "price": "867",
+        "discount_price": "922",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 754696649,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-snezhinka-2-assorti-novogodniy-podarok-mylo-kosmeticheskoe-754696649/"
+      },
+      {
+        "title": "Мыло твердое Synergetic натуральное морская соль и водоросли, 90 г (туалетное)",
+        "price": "467",
+        "discount_price": 0,
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 817923467,
+        "url": "https://www.ozon.ru/product/mylo-tverdoe-synergetic-naturalnoe-morskaya-sol-i-vodorosli-90-g-tualetnoe-817923467/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Восьмерка с ландышем\" в подарок, сувенир на праздник, оранжевый",
+        "price": "156",
+        "discount_price": "439",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 466307772,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-vosmerka-s-landyshem-v-podarok-suvenir-na-prazdnik-oranzhevyy-466307772/"
+      },
+      {
+        "title": "ДАРЁНА Мыло твердое ручной работы \"Снежинка № 1 розовая\" в подарок на Новый год, 2 шт.",
+        "price": "424",
+        "discount_price": 0,
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 756534449,
+        "url": "https://www.ozon.ru/product/darena-mylo-tverdoe-ruchnoy-raboty-snezhinka-1-rozovaya-v-podarok-na-novyy-god-2-sht-756534449/"
+      },
+      {
+        "title": "Synergetic Мыло туалетное морская соль и водоросли 90 г",
+        "price": "199",
+        "discount_price": "299",
+        "brand": "Synergetic",
+        "category": "Мыло",
+        "sku": 640024559,
+        "url": "https://www.ozon.ru/product/synergetic-mylo-tualetnoe-morskaya-sol-i-vodorosli-90-g-640024559/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Сердце из роз\", мыло косметическое в подарок, сувенир на праздник",
+        "price": "226",
+        "discount_price": "360",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 316546473,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-serdtse-iz-roz-mylo-kosmeticheskoe-v-podarok-suvenir-na-prazdnik-316546473/"
+      },
+      {
+        "title": "ДАРЁНА Мыло ручной работы \"Шишка зеленая\", новогодний подарок, мыло косметическое в подарок на Новый год, 2шт",
+        "price": "469",
+        "discount_price": "708",
+        "brand": "Мыловаренная мастерская Дарена",
+        "category": "Мыло",
+        "sku": 730177802,
+        "url": "https://www.ozon.ru/product/darena-mylo-ruchnoy-raboty-shishka-zelenaya-novogodniy-podarok-mylo-kosmeticheskoe-v-podarok-730177802/"
+      }
+    ],
+    "rate": [
+      "\"Express\": 4,9 из 5",
+      "Мыловаренная мастерская \"ДАРЁНА\": 4,9 из 5",
+      "Мыловаренная мастерская \"ДАРЁНА\": 4,9/5",
+      "\"Киндер энд Момс\": 4,7 из 5",
+      "МИСТЕРИЯ: 4,9 из 5",
+      "Юмитой: 4,8 из 5",
+      "Синергетик, ООО: 4,9 из 5"
+    ],
+    "countRev": 0
+  }
+]
