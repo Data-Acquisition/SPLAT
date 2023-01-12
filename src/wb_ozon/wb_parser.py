@@ -16,7 +16,7 @@ driver = None
 
 def send_message_tg(message):
     bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
-    chat_id = '-892938701'
+    chat_id = '-1001504854026'
     send_text = 'https://api.telegram.org/bot' + bot_token + \
         '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
     response = requests.post(send_text)
