@@ -3,13 +3,11 @@ import requests
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from datbass.crud import add_cards, add_price, add_rate, add_review, add_seller
-# from ..data_base.models import add_cards, add_price, add_review, add_rate, add_seller
 import time
 from datetime import datetime
 from datetime import timedelta
 import locale
 import json
-import requests
 
 driver = None
 
