@@ -8,6 +8,14 @@ import pandas as pd
 import json
 import re
 from datbass.crud import add_cards, add_price, add_rate, add_review, add_seller
+import requests
+
+def send_message_tg(message):
+  bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
+  chat_id = '-892938701'
+  send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
+  response = requests.post(send_text)
+  print(response.json())
 
 
 def make_url(row: tuple) -> str:
@@ -257,6 +265,7 @@ def main():
       # time.sleep(3)
     except Exception as ex:
       print(ex)
+      send_message_tg(str(ex))
       main()
     
   driver.close()  

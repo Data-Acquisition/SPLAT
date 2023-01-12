@@ -9,7 +9,14 @@ from datetime import datetime
 from datetime import timedelta
 import locale
 import json
+import requests
 
+def send_message_tg(message):
+  bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
+  chat_id = '-892938701'
+  send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
+  response = requests.post(send_text)
+  print(response.json())
 
 def makeDateList() -> list:
   listDate = []
@@ -126,42 +133,46 @@ def main():
   options.add_argument('--headless')
   driver = uc.Chrome(options=options)
   
-  for row in brands.itertuples(index=False):
-    print(row[0])
-    list_metric = []
-    url_cards, url_sellers, url_reviews = make_url(row)
-    print('Парсим цены...')
-    list_root, list_price = get_content_root(url_reviews)
-    for item in list_price:
-      add_price(row[0], item['idShop'], item['price'], 'wb')
+  try:
+    for row in brands.itertuples(index=False):
+      print(row[0])
+      list_metric = []
+      url_cards, url_sellers, url_reviews = make_url(row)
+      print('Парсим цены...')
+      list_root, list_price = get_content_root(url_reviews)
+      for item in list_price:
+        add_price(row[0], item['idShop'], item['price'], 'wb')
+        
+      print('Считаем кол-во карточек товара...')
+      countCards = get_count_cards(get_content(url_cards))
+      add_cards(row[0], countCards, 'wb')
       
-    print('Считаем кол-во карточек товара...')
-    countCards = get_count_cards(get_content(url_cards))
-    add_cards(row[0], countCards, 'wb')
-    
-    print('Считаем кол-во продавцов...')
-    countSellers = get_count_sellers(get_content(url_sellers))
-    add_seller(row[0], countSellers, 'wb')
-    
-    print('Парсим рейтинги продавцов...')
-    rateShops = get_rate_sellers(get_content(url_sellers), driver)
-    for item in rateShops:
-      add_rate(row[0], item['idShop'], item['rate'], 'wb')
+      print('Считаем кол-во продавцов...')
+      countSellers = get_count_sellers(get_content(url_sellers))
+      add_seller(row[0], countSellers, 'wb')
       
-    print('Считаем комментарии за неделю...')
-    countRev = get_count_review_for_week(list_root, makeDateList())
-    add_review(row[0], countRev, 'wb')
-    
-    print('Записываем в json')
-    list_metric.append({'count_cards': countCards,
-                        'count_sellers': countSellers,
-                        'rate_sellers_id': rateShops,
-                        'count_rev' : countRev,
-                        'price': list_price})
-    
-    with open(f'wb_data{row[0]}.json', 'w', encoding='UTF-8') as file:
-      json.dump(list_metric, file, indent=2, ensure_ascii=False)
-      print(f'Данные сохранены в wb_data{row[0]}.json')
+      print('Парсим рейтинги продавцов...')
+      rateShops = get_rate_sellers(get_content(url_sellers), driver)
+      for item in rateShops:
+        add_rate(row[0], item['idShop'], item['rate'], 'wb')
+        
+      print('Считаем комментарии за неделю...')
+      countRev = get_count_review_for_week(list_root, makeDateList())
+      add_review(row[0], countRev, 'wb')
+      
+      print('Записываем в json')
+      list_metric.append({'count_cards': countCards,
+                          'count_sellers': countSellers,
+                          'rate_sellers_id': rateShops,
+                          'count_rev' : countRev,
+                          'price': list_price})
+      
+      with open(f'wb_data{row[0]}.json', 'w', encoding='UTF-8') as file:
+        json.dump(list_metric, file, indent=2, ensure_ascii=False)
+        print(f'Данные сохранены в wb_data{row[0]}.json')
+  except Exception as ex:
+    send_message_tg(str(ex))
+
       
 
 if __name__ == '__main__':
