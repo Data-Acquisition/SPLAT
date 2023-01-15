@@ -152,7 +152,7 @@ def get_count_review_for_week(data_root: list, dateList: list):
 
 def main():
     global driver
-    brands = pd.read_excel('brand-id-test.xlsx')
+    brands = pd.read_excel('brand-id-wb.xlsx')
     brands = brands.drop_duplicates(keep='first')
 
     options = uc.ChromeOptions()
