@@ -1,6 +1,14 @@
+from datetime import date
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, BigInteger, ForeignKey, Float
+from sqlalchemy import Column, Integer, String, BigInteger, ForeignKey, Float, DateTime
 from . import engine
+
+# from sqlalchemy import create_engine
+# from sqlalchemy.orm import sessionmaker
+
+# engine = create_engine('postgresql+psycopg2://localhost:5432/postgres')
+# Session = sessionmaker(bind=engine)
+# session = Session()
 
 Base = declarative_base()
 
@@ -11,6 +19,7 @@ class Card(Base):
     category = Column(String(250), nullable=False)
     count = Column(BigInteger, nullable=False)
     space = Column(String(250), nullable=False)  # ozon or wb
+    created_at = Column(DateTime)
 
     __mapper_args__ = {
         "primary_key": [category]
@@ -23,6 +32,7 @@ class Seller(Base):
     category = Column(String(250), nullable=False)
     count = Column(BigInteger, nullable=False)
     space = Column(String(250), nullable=False)
+    created_at = Column(DateTime)
 
     __mapper_args__ = {
         "primary_key": [category]
@@ -32,13 +42,15 @@ class Seller(Base):
 class Price(Base):
     __tablename__ = 'Prices'
 
+    id = Column(BigInteger, nullable=False)
     category = Column(String(250), nullable=False)
     name_seller = Column(String(250), nullable=False)
     price = Column(Float, nullable=False)
     space = Column(String(250), nullable=False)
-
+    created_at = Column(DateTime)
+    
     __mapper_args__ = {
-        "primary_key": [name_seller]
+        "primary_key": [id]
     }
 
 
@@ -49,6 +61,7 @@ class Rate(Base):
     name_seller = Column(String(250), nullable=False)
     rate = Column(Float, nullable=False)
     space = Column(String(250), nullable=False)  # ozon or wb
+    created_at = Column(DateTime)
 
     __mapper_args__ = {
         "primary_key": [name_seller]
@@ -61,6 +74,7 @@ class Review(Base):
     category = Column(String(250), nullable=False)
     count = Column(BigInteger, nullable=False)
     space = Column(String(250), nullable=False)
+    created_at = Column(DateTime)
 
     __mapper_args__ = {
         "primary_key": [category]

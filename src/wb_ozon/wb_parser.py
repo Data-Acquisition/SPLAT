@@ -4,7 +4,7 @@ import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from datbass.crud import add_cards, add_price, add_rate, add_review, add_seller
 import time
-from datetime import datetime
+from datetime import datetime, date
 from datetime import timedelta
 import locale
 import json
@@ -14,7 +14,7 @@ driver = None
 
 def send_message_tg(message):
     bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
-    chat_id = '-1001504854026'
+    chat_id = '369056839'
     send_text = 'https://api.telegram.org/bot' + bot_token + \
         '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
     response = requests.post(send_text)
@@ -81,6 +81,7 @@ def get_rate_sellers(json_file, driver):
         data_list.append(data['id'])
     print(data_list)
     for id in data_list:
+      try:
         driver.get(f"https://www.wildberries.ru/seller/{id}")
         time.sleep(1)
         try:
@@ -92,8 +93,13 @@ def get_rate_sellers(json_file, driver):
         list_rate.append({
             'idShop': str(id),
             'rate': float(rating)})
-
-    return list_rate
+      except Exception as ex:
+        continue
+    uniq_list_rate = []
+    for item in list_rate:
+      if item not in uniq_list_rate:
+        uniq_list_rate.append(item)
+    return uniq_list_rate
 
 
 def get_content_root(url):
@@ -102,23 +108,28 @@ def get_content_root(url):
     data_list = []
     list_price = []
     for page in range(1, 101):
-        print(f'Сбор позиций со страницы {page} из 100')
-        url += f'&page={page}'
-        r = requests.get(url, headers=headers)
-        json_file = r.json()
-        root_list = []
-        for data in json_file['data']['products']:
-            root_list.append(data['root'])
-            list_price.append({'idShop': str(data['supplierId']),
-                               'price': float(data['salePriceU'])/100})
-        print(f'Добавлено позиций: {len(root_list)}')
-        if len(root_list) > 0:
-            data_list.extend(root_list)
-        else:
-            print(f'Сбор данных завершен.')
-            break
-        data_list_uniq = set(data_list)
-    return list(data_list_uniq), list_price
+      print(f'Сбор позиций со страницы {page} из 100')
+      url += f'&page={page}'
+      r = requests.get(url, headers=headers)
+      json_file = r.json()
+      root_list = []
+      for data in json_file['data']['products']:
+          root_list.append(data['root'])
+          list_price.append({'id': data['id'],
+                              'idShop': str(data['supplierId']),
+                              'price': float(data['salePriceU'])/100})
+      print(f'Добавлено позиций: {len(root_list)}')
+      if len(root_list) > 0:
+          data_list.extend(root_list)
+      else:
+          print(f'Сбор данных завершен.')
+          break
+    data_list_uniq = set(data_list)
+    uniq_list_price = []
+    for item in list_price:
+      if item not in uniq_list_price:
+        uniq_list_price.append(item)
+    return list(data_list_uniq), uniq_list_price
 
 
 def get_count_review_for_week(data_root: list, dateList: list):
@@ -157,24 +168,27 @@ def main():
             print('Парсим цены...')
             list_root, list_price = get_content_root(url_reviews)
             for item in list_price:
-                add_price(row[0], item['idShop'], item['price'], 'wb')
+                add_price(item['id'], row[0], item['idShop'], item['price'], 'wb', date.today())
 
             print('Считаем кол-во карточек товара...')
             countCards = get_count_cards(get_content(url_cards))
-            add_cards(row[0], countCards, 'wb')
+            add_cards(row[0], countCards, 'wb', date.today())
 
             print('Считаем кол-во продавцов...')
             countSellers = get_count_sellers(get_content(url_sellers))
-            add_seller(row[0], countSellers, 'wb')
+            add_seller(row[0], countSellers, 'wb', date.today())
 
             print('Парсим рейтинги продавцов...')
             rateShops = get_rate_sellers(get_content(url_sellers), driver)
+            print('добавляем в базу')
             for item in rateShops:
-                add_rate(row[0], item['idShop'], item['rate'], 'wb')
-
+              try:
+                add_rate(row[0], item['idShop'], item['rate'], 'wb', date.today())
+              except Exception:
+                continue
             print('Считаем комментарии за неделю...')
             countRev = get_count_review_for_week(list_root, makeDateList())
-            add_review(row[0], countRev, 'wb')
+            add_review(row[0], countRev, 'wb', date.today())
 
             print('Записываем в json')
             list_metric.append({'count_cards': countCards,

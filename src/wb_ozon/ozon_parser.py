@@ -1,7 +1,7 @@
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 import time
-from datetime import datetime
+from datetime import datetime, date
 from datetime import timedelta
 import locale
 import pandas as pd
@@ -142,13 +142,19 @@ def get_rate(driver, link_list: list) -> dict:
                 'rate': float(rateNew[:3])})
         except Exception:
             continue
-    return shopRateList
+    uniq_list_rate = []
+    for item in shopRateList:
+      if item not in uniq_list_rate:
+        uniq_list_rate.append(item)  
+        
+    return uniq_list_rate
 
 
 def get_comment_count_forweek(driver, link_list: list) -> int:
     listDateWeek = makeDateList()
     commentCount = 0
     for link in link_list:
+      try:
         numPageCom = 1
         matches = True
         while matches == True:
@@ -165,6 +171,8 @@ def get_comment_count_forweek(driver, link_list: list) -> int:
             else:
                 numPageCom += 1
             commentCount += currCommentCount
+      except Exception:
+        continue
     return commentCount
 
 
@@ -207,6 +215,7 @@ def parse_data(data: dict) -> dict:
 def get_price(driver, uri) -> dict:
     json_price = []
     for link in uri:
+      try:
         url = f"https://www.ozon.ru/api/composer-api.bx/page/json/v2?url={link}"
         driver.maximize_window()
         driver.get(url)
@@ -216,7 +225,13 @@ def get_price(driver, uri) -> dict:
         data = json.loads(data)
         data = parse_data(data)
         json_price.append(data)
-    return json_price
+      except Exception:
+        continue
+    uniq_price_list = []
+    for item in json_price:
+      if item not in uniq_price_list:
+        uniq_price_list.append(item)
+    return uniq_price_list
 
 
 def main():
@@ -225,7 +240,7 @@ def main():
     brands = brands.drop_duplicates(keep='first')
 
     print("Введите количество страниц карточек товара, с которых необходимо спарсить ссылки...")
-    MAX_PAGE = 20
+    MAX_PAGE = 1
 
     for row in brands.itertuples(index=False):
         url = make_url(row)
@@ -239,10 +254,10 @@ def main():
 
             print("Считаем кол-во карточек товара по всем страницам...")
             countCardsItem = countCards(driver, url)
-            add_cards(row[0], countCardsItem, 'ozon')
+            add_cards(row[0], countCardsItem, 'ozon', date.today())
             print("Считаем кол-во продавцов по всем страницам...")
             countShopsProd = countShops(driver, url)
-            add_seller(row[0], countShopsProd, 'ozon')
+            add_seller(row[0], countShopsProd, 'ozon', date.today())
             # print("Количество карточек товара:", countCardsItem, "\nКоличество продавцов:", countShopsProd)
 
             # with open(f"{row[0]}"+".txt", "w", encoding='utf-8') as file:
@@ -259,7 +274,7 @@ def main():
             print("Получаем цену на товары...")
             price_list = get_price(driver, link_list_uri)
             for item in price_list:
-                add_price(row[0], item["brand"], item["price"], 'ozon')
+                add_price(item['sku'] ,row[0], item["brand"], item["price"], 'ozon', date.today())
             # with open('product_links'+'.txt', 'w', encoding='utf-8') as f:
             #   for link in link_list:
             #       f.write(link + '\n')
@@ -267,14 +282,17 @@ def main():
             print("Получаем рейтинги продавцов...")
             shopRatingList = get_rate(driver, link_list)
             for item in shopRatingList:
-                add_rate(row[0], item['shopname'], item['rate'], 'ozon')
+              try:
+                add_rate(row[0], item['shopname'], item['rate'], 'ozon', date.today())
+              except Exception:
+                continue
             # with open(f'{row[0]}'+'.txt', 'a', encoding='utf-8') as f:
             #   for i in shopRatingList:
             #       f.write(i + '\n')
 
             print("Считаем количество отзывов за неделю...")
             commentsCount = get_comment_count_forweek(driver, link_list)
-            add_review(row[0], commentsCount, 'ozon')
+            add_review(row[0], commentsCount, 'ozon', date.today())
             print("Количество отзывов за неделю:", commentsCount)
 
             list_metric = []
