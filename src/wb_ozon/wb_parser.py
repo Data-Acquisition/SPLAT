@@ -155,13 +155,12 @@ def main():
     brands = pd.read_excel('brand-id-wb.xlsx')
     brands = brands.drop_duplicates(keep='first')
 
-    options = uc.ChromeOptions()
-    options.headless = True
-    options.add_argument('--headless')
-    driver = uc.Chrome(options=options)
-
     try:
         for row in brands.itertuples(index=False):
+            options = uc.ChromeOptions()
+            options.headless = True
+            options.add_argument('--headless')
+            driver = uc.Chrome(options=options)
             print(row[0])
             list_metric = []
             url_cards, url_sellers, url_reviews = make_url(row)
@@ -190,16 +189,18 @@ def main():
             countRev = get_count_review_for_week(list_root, makeDateList())
             add_review(row[0], countRev, 'wb', date.today())
 
-            print('Записываем в json')
-            list_metric.append({'count_cards': countCards,
-                                'count_sellers': countSellers,
-                                'rate_sellers_id': rateShops,
-                                'count_rev': countRev,
-                                'price': list_price})
+            # print('Записываем в json')
+            # list_metric.append({'count_cards': countCards,
+            #                     'count_sellers': countSellers,
+            #                     'rate_sellers_id': rateShops,
+            #                     'count_rev': countRev,
+            #                     'price': list_price})
 
-            with open(f'wb_data{row[0]}.json', 'w', encoding='UTF-8') as file:
-                json.dump(list_metric, file, indent=2, ensure_ascii=False)
-                print(f'Данные сохранены в wb_data{row[0]}.json')
+            # with open(f'wb_data{row[0]}.json', 'w', encoding='UTF-8') as file:
+            #     json.dump(list_metric, file, indent=2, ensure_ascii=False)
+            #     print(f'Данные сохранены в wb_data{row[0]}.json')
+            driver.close()
+            driver.quit()
     except Exception as ex:
         send_message_tg(str(ex))
 

@@ -236,11 +236,11 @@ def get_price(driver, uri) -> dict:
 
 def main():
     global driver
-    brands = pd.read_excel('brand-test.xlsx')
+    brands = pd.read_excel('brand-id-ozon.xlsx')
     brands = brands.drop_duplicates(keep='first')
 
     print("Введите количество страниц карточек товара, с которых необходимо спарсить ссылки...")
-    MAX_PAGE = 1
+    MAX_PAGE = 10
 
     for row in brands.itertuples(index=False):
         url = make_url(row)
@@ -295,13 +295,13 @@ def main():
             add_review(row[0], commentsCount, 'ozon', date.today())
             print("Количество отзывов за неделю:", commentsCount)
 
-            list_metric = []
-            list_metric.append({'countCards': countCardsItem, 'countShops': countShopsProd,
-                                'price': price_list, 'rate': shopRatingList, 'countRev': commentsCount})
+            # list_metric = []
+            # list_metric.append({'countCards': countCardsItem, 'countShops': countShopsProd,
+            #                     'price': price_list, 'rate': shopRatingList, 'countRev': commentsCount})
 
-            with open(f'ozon_data{row[0]}.json', 'w', encoding='UTF-8') as file:
-                json.dump(list_metric, file, indent=2, ensure_ascii=False)
-                print(f'Данные сохранены в ozon_data{row[0]}.json')
+            # with open(f'ozon_data{row[0]}.json', 'w', encoding='UTF-8') as file:
+            #     json.dump(list_metric, file, indent=2, ensure_ascii=False)
+            #     print(f'Данные сохранены в ozon_data{row[0]}.json')
 
             # with open(f"{row[0]}"+".txt", "a", encoding='utf-8') as file:
             #   file.write(f"\nКоличество отзывов за неделю: {commentsCount}")
@@ -312,8 +312,8 @@ def main():
             send_message_tg(str(ex))
             main()
 
-    driver.close()
-    driver.quit()
+        driver.close()
+        driver.quit()
 
 
 if __name__ == '__main__':

@@ -22,7 +22,7 @@ class Card(Base):
     created_at = Column(DateTime)
 
     __mapper_args__ = {
-        "primary_key": [category]
+        "primary_key": [category, space]
     }
 
 
@@ -35,7 +35,7 @@ class Seller(Base):
     created_at = Column(DateTime)
 
     __mapper_args__ = {
-        "primary_key": [category]
+        "primary_key": [category, space]
     }
 
 
@@ -64,7 +64,7 @@ class Rate(Base):
     created_at = Column(DateTime)
 
     __mapper_args__ = {
-        "primary_key": [name_seller]
+        "primary_key": [name_seller, category, space]
     }
 
 
@@ -77,7 +77,7 @@ class Review(Base):
     created_at = Column(DateTime)
 
     __mapper_args__ = {
-        "primary_key": [category]
+        "primary_key": [category, space]
     }
 
 
