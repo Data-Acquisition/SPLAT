@@ -10,6 +10,8 @@ def add_cards(cat, count, space, date):
     return card
   elif exist_card.created_at != date:
     exist_card.count = count
+    session.commit()
+  elif exist_card.created_at == date:
     exist_card.created_at = date
     session.commit()
   
@@ -22,6 +24,8 @@ def add_seller(cat, count, space, date):
     return seller
   elif exist_seller.created_at != date:
     exist_seller.count = count
+    session.commit()
+  elif exist_seller.created_at == date:
     exist_seller.created_at = date
     session.commit()
   
@@ -34,6 +38,8 @@ def add_price(id, cat, name, price, space, date):
     return prices
   elif exist_price.created_at != date:
     exist_price.price = price
+    session.commit()
+  elif exist_price.created_at == date :
     exist_price.created_at = date
     session.commit()
   
@@ -47,6 +53,8 @@ def add_rate(cat, name, rate, space, date):
     return rating
   elif exist_rate.created_at != date:
     exist_rate.rate = rate
+    session.commit()
+  elif exist_rate.created_at == date:
     exist_rate.created_at = date
     session.commit()
 
@@ -59,5 +67,7 @@ def add_review(cat, count, space, date):
     return review
   elif exist_rev.created_at != date:
     exist_rev.count = count
+    session.commit()
+  elif exist_rev.created_at == date:
     exist_rev.created_at = date
     session.commit()
