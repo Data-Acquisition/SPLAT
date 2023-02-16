@@ -1,5 +1,7 @@
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 from datetime import datetime, date
 from datetime import timedelta
@@ -16,6 +18,7 @@ driver = None
 def send_message_tg(message):
     bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
     chat_id = '-1001504854026'
+    # chat_id = '369056839'
     send_text = 'https://api.telegram.org/bot' + bot_token + \
         '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
     response = requests.post(send_text)
@@ -107,14 +110,13 @@ def countShops(driver, url) -> int:
 
 
 def takelinks(driver, pages: int, url: str) -> list:
-    print(url)
+    # print(url)
     link_list_uri = []
     link_list = []
     curNumPage = 1
     while curNumPage <= pages:
         urll = f"{url}" + f"&page={curNumPage}"
         driver.get(urll)
-        print(urll)
         time.sleep(5)
         links = driver.find_elements(By.XPATH,
                                      "//div[contains(@class, 'widget-search-result-container')]/div/div/div/a")
@@ -127,18 +129,22 @@ def takelinks(driver, pages: int, url: str) -> list:
             link_list_uri.append(link.get_attribute("href").split('?')[0][19:])
         curNumPage += 1
     link_list_uniq = set(link_list)
-    print(link_list)
-    print(link_list_uri)
-    return list(link_list_uniq), link_list_uri
+    link_list_uri_uniq = set(link_list_uri)
+    print(len(link_list_uniq), len(link_list_uri_uniq))
+    return list(link_list_uniq), list(link_list_uri_uniq)
 
 
-def get_rate(driver, link_list: list) -> dict:
+def get_rate(driver, link_list: list):
     shopRateList = []
+    unit_list = []
     for link in link_list:
         # print(f"{link}")
         driver.get(f"{link}")
-        # print(f"Success {link}")
+        print(f"Success {link}")
         time.sleep(3)
+        unit_list.append({'sku':link[-10:-1],
+                          'units': get_add_character(driver)})
+        # print(unit_list[0])
         try:
             nameShop = driver.find_element(By.XPATH,
                                            "//div[contains(text(), 'родавец')]/../../../../../div[2]//a").get_attribute(
@@ -156,13 +162,32 @@ def get_rate(driver, link_list: list) -> dict:
                 'rate': float(rateNew[:3])})
         except Exception:
             continue
+        # time.sleep(3)
+        
+
+          # continue 
+        
     uniq_list_rate = []
     for item in shopRateList:
       if item not in uniq_list_rate:
         uniq_list_rate.append(item)  
-        
-    return uniq_list_rate
+       
+    return uniq_list_rate, unit_list
 
+def get_add_character(driver):
+  unit_list = []
+  try:
+    unit = driver.find_element(By.XPATH,
+                                    "//span[contains(text(), 'Вес товара')]/../../dd/..//span").text
+    unit = unit.split(',')[1][1:]
+    unit_measure = driver.find_element(By.XPATH,
+                                    "//span[contains(text(), 'Вес товара')]/../../dd").text
+    unit_list.append(unit_measure)
+    unit_list.append(unit)
+  except Exception:
+    unit_list.append('')
+    unit_list.append('')
+  return unit_list
 
 def get_comment_count_forweek(driver, link_list: list) -> int:
     listDateWeek = makeDateList()
@@ -231,21 +256,26 @@ def get_price(driver, uri) -> dict:
     for link in uri:
       try:
         url = f"https://www.ozon.ru/api/composer-api.bx/page/json/v2?url={link}"
-        print(url)
+        # print(url)
         driver.maximize_window()
         driver.get(url)
         data = driver.find_element(
             By.TAG_NAME, "pre").get_attribute('innerHTML')
         data = re.sub(";", "", data)
         data = json.loads(data)
+        # print(data)
+        with open('ozon_data.json', 'w', encoding='UTF-8') as file:
+            json.dump(data, file, indent=2, ensure_ascii=False)
         data = parse_data(data)
         json_price.append(data)
       except Exception:
         continue
+    print(len(json_price))
     uniq_price_list = []
     for item in json_price:
       if item not in uniq_price_list:
         uniq_price_list.append(item)
+    print(len(uniq_price_list))
     return uniq_price_list
 
 
@@ -262,7 +292,13 @@ def main():
         options = uc.ChromeOptions()
         options.headless = True
         options.add_argument('--headless')
-        driver = uc.Chrome(options=options)
+        options.add_argument(f'--disable-notifications')
+        options.add_argument(f'--no-first-run --no-service-autorun --password-store=basic')
+        options.add_argument(f'--disable-gpu')
+        options.add_argument(f'--disable-dev-shm-usage')
+        options.add_argument(f'--no-sandbox')
+        driver = uc.Chrome(options=options, service=Service(ChromeDriverManager().install()))
+        # time.sleep(2)
         try:
             # driver.execute_script("window.scrollTo(5,40000);")
             # time.sleep(3)
@@ -292,14 +328,13 @@ def main():
 
             print("Получаем цену на товары...")
             price_list = get_price(driver, link_list_uri)
-            for item in price_list:
-                add_price(item['sku'] ,row[0], item["brand"], item["price"], 'ozon', date.today())
+            # print(price_list)
             # with open('product_links'+'.txt', 'w', encoding='utf-8') as f:
             #   for link in link_list:
             #       f.write(link + '\n')
 
             print("Получаем рейтинги продавцов...")
-            shopRatingList = get_rate(driver, link_list)
+            shopRatingList, unit_list = get_rate(driver, link_list)
             for item in shopRatingList:
               try:
                 add_rate(row[0], item['shopname'], item['rate'], 'ozon', date.today())
@@ -308,6 +343,18 @@ def main():
             # with open(f'{row[0]}'+'.txt', 'a', encoding='utf-8') as f:
             #   for i in shopRatingList:
             #       f.write(i + '\n')
+            # countUnit = 0
+            # print(len(unit_list))
+            # print(len(price_list))
+            for item in price_list:
+              for units in unit_list:
+                if item['sku'] == int(units['sku']):
+                  add_price(item['sku'] ,row[0], item["title"], item["price"], 'ozon',
+                            date.today(), units['units'][0], units['units'][1], item["brand"])
+                  continue
+                # countUnit += 1
+            
+
 
             print("Считаем количество отзывов за неделю...")
             commentsCount = get_comment_count_forweek(driver, link_list)
