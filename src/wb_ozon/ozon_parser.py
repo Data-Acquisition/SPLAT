@@ -16,7 +16,6 @@ driver = None
 def send_message_tg(message):
     bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
     chat_id = '-1001504854026'
-    # chat_id = '369056839'
     send_text = 'https://api.telegram.org/bot' + bot_token + \
         '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
     response = requests.post(send_text)
@@ -273,9 +272,9 @@ def main():
             print(countCardsItem)
             add_cards(row[0], countCardsItem, 'ozon', date.today())
             
-            # print("Считаем кол-во продавцов по всем страницам...")
-            # countShopsProd = countShops(driver, url)
-            # add_seller(row[0], countShopsProd, 'ozon', date.today())
+            print("Считаем кол-во продавцов по всем страницам...")
+            countShopsProd = countShops(driver, url)
+            add_seller(row[0], countShopsProd, 'ozon', date.today())
             
             
             # print("Количество карточек товара:", countCardsItem, "\nКоличество продавцов:", countShopsProd)
