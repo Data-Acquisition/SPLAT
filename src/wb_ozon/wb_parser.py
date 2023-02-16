@@ -2,6 +2,8 @@ import pandas as pd
 import requests
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from datbass.crud import add_cards, add_price, add_rate, add_review, add_seller
 import time
 from datetime import datetime, date
@@ -15,6 +17,7 @@ driver = None
 def send_message_tg(message):
     bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
     chat_id = '-1001504854026'
+    # cha_id = '369056839'
     send_text = 'https://api.telegram.org/bot' + bot_token + \
         '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
     response = requests.post(send_text)
@@ -112,10 +115,10 @@ def get_content_root(url):
       url += f'&page={page}'
       r = requests.get(url, headers=headers)
       json_file = r.json()
-      if page == 1:
-        print(url)
-        with open('wb_data.json', 'w', encoding='UTF-8') as file:
-          json.dump(json_file, file, indent=2, ensure_ascii=False)
+      # if page == 1:
+      #   print(url)
+      #   with open('wb_data.json', 'w', encoding='UTF-8') as file:
+      #     json.dump(json_file, file, indent=2, ensure_ascii=False)
       root_list = []
       for data in json_file['data']['products']:
           print(data['id'])
@@ -199,7 +202,13 @@ def main():
             options = uc.ChromeOptions()
             options.headless = True
             options.add_argument('--headless')
-            driver = uc.Chrome(options=options)
+            options.add_argument('--headless')
+            options.add_argument(f'--disable-notifications')
+            options.add_argument(f'--no-first-run --no-service-autorun --password-store=basic')
+            options.add_argument(f'--disable-gpu')
+            options.add_argument(f'--disable-dev-shm-usage')
+            options.add_argument(f'--no-sandbox')
+            driver = uc.Chrome(options=options, service=Service(ChromeDriverManager().install()))
             print(row[0])
             list_metric = []
             url_cards, url_sellers, url_reviews = make_url(row)
