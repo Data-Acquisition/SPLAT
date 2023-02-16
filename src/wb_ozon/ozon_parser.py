@@ -16,6 +16,7 @@ driver = None
 def send_message_tg(message):
     bot_token = '5901249206:AAFXkWy3OpRGS9RY1ST0zooUI4uVyi51xzM'
     chat_id = '-1001504854026'
+    # chat_id = '369056839'
     send_text = 'https://api.telegram.org/bot' + bot_token + \
         '/sendMessage?chat_id=' + chat_id + '&parse_mode=Markdown&text=' + message
     response = requests.post(send_text)
@@ -72,16 +73,22 @@ def countCards(driver, url) -> int:
 
 
 def countShops(driver, url) -> int:
+    print(url)
     driver.get(url)
     time.sleep(5)
-    driver.find_element(
-        By.XPATH, "//span[contains(text(), 'Все фильтры')]").click()
-    time.sleep(4)
+    try:
+      driver.find_element(
+          By.XPATH, "//span[contains(text(), 'Все фильтры')]").click()
+      time.sleep(4)
+    except Exception as ex:
+      print(ex)
+      countShops(driver, url)
     try:
         driver.find_element(
             By.XPATH, "//span[contains(text(), 'Продавец')]").click()
         time.sleep(1)
-    except Exception:
+    except Exception as ex:
+        print(ex)
         countShops(driver, url)
     flag = 0
     try:
@@ -101,14 +108,18 @@ def countShops(driver, url) -> int:
 
 
 def takelinks(driver, pages: int, url: str) -> list:
+    print(url)
     link_list_uri = []
     link_list = []
     curNumPage = 1
     while curNumPage <= pages:
-        driver.get(f"{url}" + f"&page={curNumPage}")
+        urll = f"{url}" + f"&page={curNumPage}"
+        driver.get(urll)
+        print(urll)
         time.sleep(5)
         links = driver.find_elements(By.XPATH,
                                      "//div[contains(@class, 'widget-search-result-container')]/div/div/div/a")
+        print(len(links))
         if len(links) == 0:
             break
         # print(len(links))
@@ -116,14 +127,18 @@ def takelinks(driver, pages: int, url: str) -> list:
             link_list.append(link.get_attribute("href").split('?')[0])
             link_list_uri.append(link.get_attribute("href").split('?')[0][19:])
         curNumPage += 1
-        link_list_uniq = set(link_list)
+    link_list_uniq = set(link_list)
+    print(link_list)
+    print(link_list_uri)
     return list(link_list_uniq), link_list_uri
 
 
 def get_rate(driver, link_list: list) -> dict:
     shopRateList = []
     for link in link_list:
+        # print(f"{link}")
         driver.get(f"{link}")
+        # print(f"Success {link}")
         time.sleep(3)
         try:
             nameShop = driver.find_element(By.XPATH,
@@ -217,6 +232,7 @@ def get_price(driver, uri) -> dict:
     for link in uri:
       try:
         url = f"https://www.ozon.ru/api/composer-api.bx/page/json/v2?url={link}"
+        print(url)
         driver.maximize_window()
         driver.get(url)
         data = driver.find_element(
@@ -240,7 +256,7 @@ def main():
     brands = brands.drop_duplicates(keep='first')
 
     print("Введите количество страниц карточек товара, с которых необходимо спарсить ссылки...")
-    MAX_PAGE = 10
+    MAX_PAGE = 1
 
     for row in brands.itertuples(index=False):
         url = make_url(row)
@@ -254,10 +270,14 @@ def main():
 
             print("Считаем кол-во карточек товара по всем страницам...")
             countCardsItem = countCards(driver, url)
+            print(countCardsItem)
             add_cards(row[0], countCardsItem, 'ozon', date.today())
-            print("Считаем кол-во продавцов по всем страницам...")
-            countShopsProd = countShops(driver, url)
-            add_seller(row[0], countShopsProd, 'ozon', date.today())
+            
+            # print("Считаем кол-во продавцов по всем страницам...")
+            # countShopsProd = countShops(driver, url)
+            # add_seller(row[0], countShopsProd, 'ozon', date.today())
+            
+            
             # print("Количество карточек товара:", countCardsItem, "\nКоличество продавцов:", countShopsProd)
 
             # with open(f"{row[0]}"+".txt", "w", encoding='utf-8') as file:

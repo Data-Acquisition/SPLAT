@@ -45,7 +45,10 @@ class Price(Base):
     id = Column(BigInteger, nullable=False)
     category = Column(String(250), nullable=False)
     name_seller = Column(String(250), nullable=False)
+    brand = Column(String(128), nullable=False)
     price = Column(Float, nullable=False)
+    unit = Column(String(64))
+    unit_measure = Column(String(64))
     space = Column(String(250), nullable=False)
     created_at = Column(DateTime)
     

@@ -112,12 +112,23 @@ def get_content_root(url):
       url += f'&page={page}'
       r = requests.get(url, headers=headers)
       json_file = r.json()
+      if page == 1:
+        print(url)
+        with open('wb_data.json', 'w', encoding='UTF-8') as file:
+          json.dump(json_file, file, indent=2, ensure_ascii=False)
       root_list = []
       for data in json_file['data']['products']:
+          print(data['id'])
+          unit = get_add_character(data['id'])
+          # print(unit[0])
+          # print(unit[1])
           root_list.append(data['root'])
           list_price.append({'id': data['id'],
-                              'idShop': str(data['supplierId']),
-                              'price': float(data['salePriceU'])/100})
+                            'idShop': str(data['supplierId']),
+                            'brand': data['brand'],
+                            'price': float(data['salePriceU'])/100,
+                            'unit': unit[0],
+                            'unit_measure': unit[1]})
       print(f'Добавлено позиций: {len(root_list)}')
       if len(root_list) > 0:
           data_list.extend(root_list)
@@ -131,6 +142,34 @@ def get_content_root(url):
         uniq_list_price.append(item)
     return list(data_list_uniq), uniq_list_price
 
+def get_add_character(id) -> list:
+    id = str(id)
+    unit = []
+    # characters = {}
+    json_file = ''
+    headers = {'Accept': "*/*",
+                'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    for i in range(1, 11):
+        url = ''
+        if i <= 9:
+            url = f"https://basket-0{i}.wb.ru/vol{id[:-5]}/part{id[:-3]}/{id}/info/ru/card.json"
+        else:
+            url = f"https://basket-{i}.wb.ru/vol{id[:-5]}/part{id[:-3]}/{id}/info/ru/card.json"
+        
+        if requests.get(url, headers=headers):
+            r = requests.get(url, headers=headers)
+            json_file = r.json()
+            print(url)
+            # with open('wb_catalogs_data.json', 'w', encoding='UTF-8') as file:
+            #         json.dump(json_file, file, indent=2, ensure_ascii=False)
+            break 
+    for row in json_file['options']:
+        if 'Вес товара с упаковкой' in row['name']:
+            unit = row['value'].split()
+            # print(unit)
+            return unit
+    else:
+      return ['', '']
 
 def get_count_review_for_week(data_root: list, dateList: list):
     headers = {'Accept': "*/*",
@@ -165,9 +204,10 @@ def main():
             list_metric = []
             url_cards, url_sellers, url_reviews = make_url(row)
             print('Парсим цены...')
-            list_root, list_price = get_content_root(url_reviews)
+            list_root, list_price= get_content_root(url_reviews)
             for item in list_price:
-                add_price(item['id'], row[0], item['idShop'], item['price'], 'wb', date.today())
+                add_price(item['id'], row[0], item['idShop'], item['price'], 'wb',
+                          date.today(), item['unit'], item['unit_measure'], item['brand'])
 
             print('Считаем кол-во карточек товара...')
             countCards = get_count_cards(get_content(url_cards))

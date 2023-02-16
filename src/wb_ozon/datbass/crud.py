@@ -29,10 +29,10 @@ def add_seller(cat, count, space, date):
     exist_seller.created_at = date
     session.commit()
   
-def add_price(id, cat, name, price, space, date):
+def add_price(id, cat, name, price, space, date, unit, unit_measure, brand):
   exist_price = session.query(Price).filter(Price.id == id, Price.space == space).first()
   if not exist_price:
-    prices = Price(id=id, category=cat, name_seller=name, price=price, space=space, created_at=date)
+    prices = Price(id=id, category=cat, name_seller=name, brand=brand, price=price, unit=unit, unit_measure=unit_measure, space=space, created_at=date)
     session.add(prices)
     session.commit()
     return prices
