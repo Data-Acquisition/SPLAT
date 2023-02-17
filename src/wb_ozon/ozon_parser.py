@@ -144,7 +144,7 @@ def get_rate(driver, link_list: list):
         time.sleep(3)
         unit_list.append({'sku':link[-10:-1],
                           'units': get_add_character(driver)})
-        # print(unit_list[0])
+        print(unit_list)
         try:
             nameShop = driver.find_element(By.XPATH,
                                            "//div[contains(text(), 'родавец')]/../../../../../div[2]//a").get_attribute(
@@ -176,15 +176,42 @@ def get_rate(driver, link_list: list):
 
 def get_add_character(driver):
   unit_list = []
-  try:
-    unit = driver.find_element(By.XPATH,
-                                    "//span[contains(text(), 'Вес товара')]/../../dd/..//span").text
-    unit = unit.split(',')[1][1:]
-    unit_measure = driver.find_element(By.XPATH,
-                                    "//span[contains(text(), 'Вес товара')]/../../dd").text
+    # unit_pieces = driver.find_elements(By.XPATH,
+    #                                 "//span[contains(text(), 'Единиц в одном товаре')]/../../dd")
+    # unit_weight = driver.find_elements(By.XPATH,
+    #                                   "//span[contains(text(), 'Вес товара')]/../../dd/..//span")
+    
+  if len(driver.find_elements(By.XPATH,
+                                  "//span[contains(text(), 'Вес товара')]/../../dd/..//span")) != 0:
+    
+    unit_measure = driver.find_elements(By.XPATH,
+                                    "//span[contains(text(), 'Вес товара')]/../../dd/..//span")
+    unit_measure = unit_measure[0].text
+    unit_measure = unit_measure.split(',')[1][1:]
+    unit = driver.find_elements(By.XPATH,
+                                    "//span[contains(text(), 'Вес товара')]/../../dd")
+    unit_list.append(unit[0].text)
     unit_list.append(unit_measure)
-    unit_list.append(unit)
-  except Exception:
+  elif len(driver.find_elements(By.XPATH,
+                                  "//span[contains(text(), 'Объем')]/../../dd/..//span")) != 0:
+    
+    unit_measure = driver.find_elements(By.XPATH,
+                                  "//span[contains(text(), 'Объем')]/../../dd/..//span")
+    unit_measure = unit_measure[0].text
+    unit_measure = unit_measure.split(',')[1][1:]
+    unit = driver.find_elements(By.XPATH,
+                                    "//span[contains(text(), 'Объем')]/../../dd")
+    unit_list.append(unit[0].text)
+    unit_list.append(unit_measure)
+    
+  elif len(driver.find_elements(By.XPATH,
+                                  "//span[contains(text(), 'Единиц в одном товаре')]/../../dd")) != 0:
+    
+    unit = driver.find_elements(By.XPATH,
+                                  "//span[contains(text(), 'Единиц в одном товаре')]/../../dd")
+    unit_list.append(unit[0].text)
+    unit_list.append('шт')
+  else:
     unit_list.append('')
     unit_list.append('')
   return unit_list
@@ -299,18 +326,20 @@ def main():
         options.add_argument(f'--no-sandbox')
         driver = uc.Chrome(options=options, service=Service(ChromeDriverManager().install()))
         # time.sleep(2)
+        # driver.close()
+        # driver.quit()
         try:
             # driver.execute_script("window.scrollTo(5,40000);")
             # time.sleep(3)
 
-            print("Считаем кол-во карточек товара по всем страницам...")
-            countCardsItem = countCards(driver, url)
-            print(countCardsItem)
-            add_cards(row[0], countCardsItem, 'ozon', date.today())
+            # print("Считаем кол-во карточек товара по всем страницам...")
+            # countCardsItem = countCards(driver, url)
+            # print(countCardsItem)
+            # add_cards(row[0], countCardsItem, 'ozon', date.today())
             
-            print("Считаем кол-во продавцов по всем страницам...")
-            countShopsProd = countShops(driver, url)
-            add_seller(row[0], countShopsProd, 'ozon', date.today())
+            # print("Считаем кол-во продавцов по всем страницам...")
+            # countShopsProd = countShops(driver, url)
+            # add_seller(row[0], countShopsProd, 'ozon', date.today())
             
             
             # print("Количество карточек товара:", countCardsItem, "\nКоличество продавцов:", countShopsProd)
@@ -373,9 +402,13 @@ def main():
             #   file.write(f"\nКоличество отзывов за неделю: {commentsCount}")
 
             # time.sleep(3)
+            driver.close()
+            driver.quit()
         except Exception as ex:
             print(ex)
             send_message_tg(str(ex))
+            driver.close()
+            driver.quit()
             main()
 
         driver.close()

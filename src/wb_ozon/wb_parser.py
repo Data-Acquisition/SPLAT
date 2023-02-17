@@ -163,14 +163,22 @@ def get_add_character(id) -> list:
             r = requests.get(url, headers=headers)
             json_file = r.json()
             print(url)
-            # with open('wb_catalogs_data.json', 'w', encoding='UTF-8') as file:
-            #         json.dump(json_file, file, indent=2, ensure_ascii=False)
+            with open('wb_catalogs_data.json', 'w', encoding='UTF-8') as file:
+                    json.dump(json_file, file, indent=2, ensure_ascii=False)
             break 
     for row in json_file['options']:
         if 'Вес товара с упаковкой' in row['name']:
             unit = row['value'].split()
             # print(unit)
             return unit
+        elif 'Объем товара' in row['name']:
+            unit = row['value'].split()
+            return unit
+        elif 'Комплектация' in row['name']:
+            for i in row['value']:
+              if i.isdigit():
+                unit = [i] + ['шт']
+                return unit
     else:
       return ['', '']
 
@@ -252,6 +260,8 @@ def main():
             driver.quit()
     except Exception as ex:
         send_message_tg(str(ex))
+        driver.close()
+        driver.quit()
 
 
 if __name__ == '__main__':
